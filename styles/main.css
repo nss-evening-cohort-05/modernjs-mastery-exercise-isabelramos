@@ -2,3 +2,27 @@ body {
 	background-color: #504a4a;
 	color: white;
 }
+
+.navbar-brand {
+	padding: 7px;
+}
+
+.navbar {
+	background-color: black;
+	border: none;
+}
+
+.nav-marvel-logo {
+	max-height: 35px;
+}
+
+.btn {
+	margin: 7px;
+}
+
+.body-marvel-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 5%
+}
