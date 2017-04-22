@@ -20,6 +20,8 @@ Install and load:
 	* Should have marvel logo for brand
 	* Should be a button for each team in the teams.json file (go ahead and hard code these for now - if you have extra time see if you can add them dynamically)
 * There should be a large Marvel logo
+Screenshot:
+![Splashpage](https://raw.githubusercontent.com/nss-nighclass-projects/modernjs_mastery_exercise/master/images/screenshots/on_load.png)
 
 ## On click of a button in the navbar
 * Note: $(this) does not work well with es6 syntax. use this work around:
@@ -33,6 +35,9 @@ Install and load:
 * The Promise.all should resolve 3 functions that get the data from the json files
 * dataGetter should pass a SINGLE array to the writeDom function
 * The writeDom function should write everything to the DOM
+
+Screenshot:
+![Splashpage](https://raw.githubusercontent.com/nss-nighclass-projects/modernjs_mastery_exercise/master/images/screenshots/on_click.png)
 
 ## Data requirements
 * You can't change ANY of the JSON files
