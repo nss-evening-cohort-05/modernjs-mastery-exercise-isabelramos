@@ -36,7 +36,7 @@ body {
 .panel {
 	background-color: #504a4a;
 	border: 1px solid white;
-
+	text-align: center;
 }
 
 .panel-heading {
@@ -53,4 +53,8 @@ body {
 
 .pink-border {
 	border: 5px solid lightpink;
+}
+
+p {
+	margin-top: 10%;
 }

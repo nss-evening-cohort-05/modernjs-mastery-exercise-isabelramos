@@ -24,12 +24,19 @@ $(document).ready(function() {
             marvelString += `<div class="panel">`;
             marvelString += `<div class="panel-heading"><h5>${marvel[i].name}</h5></div>`;           
             marvelString += `<div class="panel-body">`;
-	        if (marvel[i].gender_id === 0) {
+	        if (marvel[i].gender_id === 0 && marvel[i].description === "") {
 	       		marvelString += `<img class="character-image pink-border" src="${marvel[i].image}">`;
-	        } else {
+	       		marvelString += `<p>"abcde fghij klmno pqrst uvwxy z"</p>`;
+	        } else if (marvel[i].gender_id === 1 && marvel[i].description === "") {
 	        	marvelString += `<img class="character-image blue-border" src="${marvel[i].image}">`;
+	        	marvelString += `<p>"1234567890"</p>`;
+	        } else if (marvel[i].gender_id === 0) {
+	        	marvelString += `<img class="character-image pink-border" src="${marvel[i].image}">`;
+		        marvelString += `<p>${marvel[i].description}</p>`;
+	        } else if (marvel[i].gender_id === 1) {
+	        	marvelString += `<img class="character-image blue-border" src="${marvel[i].image}">`;
+		        marvelString += `<p>${marvel[i].description}</p>`;
 	        }
-	        marvelString += `<p>${marvel[i].description}</p>`;
 	        marvelString += `</div>`;
       		marvelString += `</div></div></div>`;
         }
@@ -74,7 +81,6 @@ $(document).ready(function() {
 						marvel.push(marvelInfo);
 						
 					};
-
 
 				});
 			});
