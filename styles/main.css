@@ -26,3 +26,31 @@ body {
 	justify-content: center;
 	margin-top: 5%
 }
+
+#container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+.panel {
+	background-color: #504a4a;
+	border: 1px solid white;
+
+}
+
+.panel-heading {
+	background-color: #f78f3f;
+}
+
+.character-image {
+	border-radius: 50%
+}
+
+.blue-border {
+	border: 5px solid lightblue;
+}
+
+.pink-border {
+	border: 5px solid lightpink;
+}

@@ -22,14 +22,20 @@ $(document).ready(function() {
 
 
 	const writeToDOM = () => {
-        var marvelString = "";
+        let marvelString = "";
 
-        for (var i=0; i < marvelInfo.length; i++) {
-            marvelString += `<div class="col-sm-5 col-md-3">`;
-            marvelString += `<div class="panel panel-default">`;
-            marvelString += `<div class="panel-heading">`;
-            marvelString += `<h3 class="panel-title">${marvelInfo[i].name}</h3>`;
-          	marvelString += `<p>${marvelInfo[i].description}</p>`;
+        for (let i=0; i < marvelInfo.length; i++) {
+            marvelString += `<div class="row col-sm-3">`;
+            marvelString += `<div class="panel">`;
+            marvelString += `<div class="panel-heading"><h5>${marvelInfo[i].name}</h5></div>`;           
+            marvelString += `<div class="panel-body">`;
+	        if (marvelInfo[i].gender_id === 0) {
+	       		marvelString += `<img class="character-image pink-border" src="${marvelInfo[i].image}">`;
+	        } else {
+	        	marvelString += `<img class="character-image blue-border" src="${marvelInfo[i].image}">`;
+	        }
+	        marvelString += `<p>${marvelInfo[i].description}</p>`;
+	        marvelString += `</div>`;
       		marvelString += `</div></div></div>`;
         }
         $("#container").append(marvelString);
