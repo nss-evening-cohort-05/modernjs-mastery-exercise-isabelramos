@@ -1,0 +1,14 @@
+{
+  "teams": [{
+    "id": 0,
+    "name": "X-Men"
+  },
+  {
+    "id": 1,
+    "name": "The Avengers"
+  },
+  {
+    "id": 2,
+    "name": "Guardians of the Galaxy"
+  }]
+}
