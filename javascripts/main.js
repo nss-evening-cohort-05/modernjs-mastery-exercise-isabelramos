@@ -6,16 +6,34 @@ $(document).ready(function() {
 
 
 	$("#x-men").click((event) => {
-	    console.log($(event.currentTarget));
+		dataGetter();
+		$(".body-marvel-logo").hide();
 	  });
 
 	$("#avengers").click((event) => {
-	    console.log($(event.currentTarget));
+	    dataGetter();
+		$(".body-marvel-logo").hide();
 	  });
 
 	$("#guardians").click((event) => {
-	    console.log($(event.currentTarget));
+	    dataGetter();
+		$(".body-marvel-logo").hide();
 	  });
+
+
+	const writeToDOM = () => {
+        var marvelString = "";
+
+        for (var i=0; i < marvelInfo.length; i++) {
+            marvelString += `<div class="col-sm-5 col-md-3">`;
+            marvelString += `<div class="panel panel-default">`;
+            marvelString += `<div class="panel-heading">`;
+            marvelString += `<h3 class="panel-title">${marvelInfo[i].name}</h3>`;
+          	marvelString += `<p>${marvelInfo[i].description}</p>`;
+      		marvelString += `</div></div></div>`;
+        }
+        $("#container").append(marvelString);
+    };
 
 
 	const loadTeams = () => {
@@ -43,6 +61,8 @@ $(document).ready(function() {
 	};
 
 
+
+	const dataGetter = () => {
 		Promise.all([loadTeams(), loadGenders(), loadCharacters()])
 		.then(function(result){
 			result.forEach(function(xhrCall) {
@@ -51,12 +71,15 @@ $(document).ready(function() {
 				});
 			});
 
-			// writeToDOM();
+			writeToDOM();
 
-	})
-	.catch(function(error) {
-		console.log(error);
-	});
+		})
+		.catch(function(error) {
+			console.log(error);
+		});
+
+		return Promise;
+	};
 
 
 
