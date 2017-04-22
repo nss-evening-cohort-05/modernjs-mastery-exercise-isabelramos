@@ -1,40 +1,35 @@
 $(document).ready(function() {
 
-
-	marvelInfo = [];
-	console.log(marvelInfo);
-
-
 	$("#x-men").click((event) => {
-		dataGetter();
+		dataGetter(0);
 		$(".body-marvel-logo").hide();
 	  });
 
 	$("#avengers").click((event) => {
-	    dataGetter();
+	    dataGetter(1);
 		$(".body-marvel-logo").hide();
 	  });
 
 	$("#guardians").click((event) => {
-	    dataGetter();
+	    dataGetter(2);
 		$(".body-marvel-logo").hide();
 	  });
 
 
-	const writeToDOM = () => {
+	const writeToDOM = (marvel) => {
         let marvelString = "";
 
-        for (let i=0; i < marvelInfo.length; i++) {
+        for (let i=0; i < marvel.length; i++) {
             marvelString += `<div class="row col-sm-3">`;
             marvelString += `<div class="panel">`;
-            marvelString += `<div class="panel-heading"><h5>${marvelInfo[i].name}</h5></div>`;           
+            marvelString += `<div class="panel-heading"><h5>${marvel[i].name}</h5></div>`;           
             marvelString += `<div class="panel-body">`;
-	        if (marvelInfo[i].gender_id === 0) {
-	       		marvelString += `<img class="character-image pink-border" src="${marvelInfo[i].image}">`;
+	        if (marvel[i].gender_id === 0) {
+	       		marvelString += `<img class="character-image pink-border" src="${marvel[i].image}">`;
 	        } else {
-	        	marvelString += `<img class="character-image blue-border" src="${marvelInfo[i].image}">`;
+	        	marvelString += `<img class="character-image blue-border" src="${marvel[i].image}">`;
 	        }
-	        marvelString += `<p>${marvelInfo[i].description}</p>`;
+	        marvelString += `<p>${marvel[i].description}</p>`;
 	        marvelString += `</div>`;
       		marvelString += `</div></div></div>`;
         }
@@ -68,16 +63,23 @@ $(document).ready(function() {
 
 
 
-	const dataGetter = () => {
+	const dataGetter = (teamId) => {
 		Promise.all([loadTeams(), loadGenders(), loadCharacters()])
 		.then(function(result){
+			let marvel = [];
 			result.forEach(function(xhrCall) {
-				xhrCall.forEach(function(marvel) {
-					marvelInfo.push(marvel);
+				xhrCall.forEach(function(marvelInfo) {
+
+					if (teamId === marvelInfo.team_id) {
+						marvel.push(marvelInfo);
+						
+					};
+
+
 				});
 			});
 
-			writeToDOM();
+			writeToDOM(marvel);
 
 		})
 		.catch(function(error) {
