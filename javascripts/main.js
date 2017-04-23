@@ -80,7 +80,7 @@ $(document).ready(function() {
 					if (teamId === marvelInfo.team_id) {
 						marvel.push(marvelInfo);
 						
-					};
+					}
 
 				});
 			});
