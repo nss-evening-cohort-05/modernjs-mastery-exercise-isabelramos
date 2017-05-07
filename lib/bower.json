@@ -1,0 +1,21 @@
+{
+  "name": "lib",
+  "homepage": "https://github.com/nss-evening-cohort-05/modernjs-mastery-exercise-isabelramos",
+  "authors": [
+    "Isabel Ramos <iramos1226@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}

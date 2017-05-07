@@ -1,0 +1,60 @@
+body {
+	background-color: #504a4a;
+	color: white;
+}
+
+.navbar-brand {
+	padding: 7px;
+}
+
+.navbar {
+	background-color: black;
+	border: none;
+}
+
+.nav-marvel-logo {
+	max-height: 35px;
+}
+
+.btn {
+	margin: 7px;
+}
+
+.body-marvel-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 5%
+}
+
+#container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+.panel {
+	background-color: #504a4a;
+	border: 1px solid white;
+	text-align: center;
+}
+
+.panel-heading {
+	background-color: #f78f3f;
+}
+
+.character-image {
+	border-radius: 50%
+}
+
+.blue-border {
+	border: 5px solid lightblue;
+}
+
+.pink-border {
+	border: 5px solid lightpink;
+}
+
+p {
+	margin-top: 10%;
+}
